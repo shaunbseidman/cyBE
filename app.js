@@ -3,7 +3,6 @@ const cors = require('cors');
 const http = require('http');
 require('dotenv').config();
 
-
 const app = express();
 app.use(cors());
 
@@ -58,9 +57,6 @@ app.get('/dns/:domain', (req, res) => {
     res.status(500).json({ error: 'Failed to retrieve DNS information.' });
   });
 });
-
-
-
 
 const PORT = 3001;
 
