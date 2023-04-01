@@ -58,8 +58,8 @@ app.get('/dns/:domain', (req, res) => {
   });
 });
 
-const PORT = 3001;
+const port = parseInt(process.env.PORT) || 8080;
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`Server listening on port ${PORT}`);
 });
