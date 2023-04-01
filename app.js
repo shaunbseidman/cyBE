@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
+require('dotenv').config();
+
 
 const app = express();
 app.use(cors());
@@ -32,7 +34,7 @@ app.get('/ipwho.is/:ip', (req, res) => {
 });
 app.get('/dns/:domain', (req, res) => {
   const domainName = req.params.domain;
-  const apiKey = 'at_ta87saEAoKoD5j66LJ7W18KAkTeLA';
+  const apiKey = process.env.API_KEY
   const options = {
     hostname: 'www.whoisxmlapi.com',
     path: `/whoisserver/DNSService?apiKey=${apiKey}&domainName=${domainName}&type=_all&outputFormat=JSON`,
