@@ -36,7 +36,7 @@ app.get('/dns/:domain', (req, res) => {
   const apiKey = process.env.API_KEY
   const options = {
     hostname: 'www.whoisxmlapi.com',
-    path: `/whoisserver/DNSService?apiKey='at_ta87saEAoKoD5j66LJ7W18KAkTeLA'&domainName=${domainName}&type=_all&outputFormat=JSON`,
+    path: `/whoisserver/DNSService?apiKey=${apiKey}&domainName=${domainName}&type=_all&outputFormat=JSON`,
     method: 'GET',
     protocol: 'http:'
   };
